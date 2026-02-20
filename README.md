@@ -200,18 +200,18 @@ Reasoning
 - Eliminates unnecessary node allocations.
 - Large speed and memory win (confirmed by inference benchmark).
 
-#Notes on benchmarking and interpretation
+# Notes on benchmarking and interpretation
 - The end-to-end training benchmark is the authoritative measure of overall improvement because it includes real graph construction, backward, and optimizer updates.
 - Microbenchmarks (especially loss-only) can be influenced by Python’s allocation patterns (e.g., “many small objects” vs “one large tuple”), which affects tracemalloc peaks.
 - In practice, the optimized script delivers strong net improvements in both speed and memory during training and inference.
 
 
-#Repository layout
+# Repository layout
 - microgpt.py — original implementation
 - microgpt_optimized.py — optimized implementation
 - bench_compare.py — benchmark harness
 
-#Repro tips
+# Repro tips
 
 For more stable benchmark results:
 - Increase --steps to 500–2000
